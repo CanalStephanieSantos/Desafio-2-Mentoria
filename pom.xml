@@ -12,7 +12,7 @@
 	<artifactId>mentoria</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mentoria</name>
-	<description>Demo project for Spring Boot</description>
+	<description>ApiRESTFUL para cadastro de vendedores e as suas regiões de atuação</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
