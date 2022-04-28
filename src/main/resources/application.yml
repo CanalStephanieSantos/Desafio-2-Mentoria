@@ -4,6 +4,7 @@ spring:
     url: jdbc:h2:mem:mentoria
     username: sa
     password:
+
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     properties:
@@ -12,3 +13,7 @@ spring:
         format_sql: true
   h2:
     console.enabled: true
+
+springdoc:
+  swagger-ui:
+    use-root-path: true
