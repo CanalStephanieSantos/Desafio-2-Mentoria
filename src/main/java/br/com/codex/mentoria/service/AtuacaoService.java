@@ -3,21 +3,19 @@ package br.com.codex.mentoria.service;
 import br.com.codex.mentoria.model.Atuacao;
 import br.com.codex.mentoria.model.dto.AtuacaoIn;
 import br.com.codex.mentoria.repository.AtuacaoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
-
+@AllArgsConstructor
 @Service
 public class AtuacaoService {
 
-    @Autowired
-    private AtuacaoRepository atuacaoRepository;
+    private final AtuacaoRepository atuacaoRepository;
+    private final ModelMapper modelMapper;
 
     public void salvaAtuacao(AtuacaoIn atuacaoIn) {
-        String regiao = atuacaoIn.getRegiao();
-        Set<String> estados = atuacaoIn.getEstados();
-        Atuacao atuacao = new Atuacao(regiao,estados);
+        Atuacao atuacao = modelMapper.map(atuacaoIn, Atuacao.class);
         atuacaoRepository.save(atuacao);
     }
 }
