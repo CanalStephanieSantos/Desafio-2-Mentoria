@@ -23,6 +23,10 @@ public class VendedorService {
         vendedorRepository.save(vendedor);
     }
 
+    public List<Vendedor> findAll(){
+        return vendedorRepository.findAll();
+    }
+
     public List<VendedorOut> vendedorById(Long id){
         List<Vendedor> vendedor = vendedorRepository.findVendedorById(id);
         List<VendedorOut> list = new ArrayList<>();
