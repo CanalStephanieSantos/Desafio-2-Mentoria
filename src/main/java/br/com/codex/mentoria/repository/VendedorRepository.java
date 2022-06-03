@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface VendedorRepository extends JpaRepository<Vendedor, Long> {
     List<Vendedor> findVendedorById(@Param("id") Long id);
+    
 }

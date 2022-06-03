@@ -25,8 +25,7 @@ public class VendedorController {
     }
 
     @GetMapping(value = "/vendedor/{id}")
-    public List<VendedorOut> vendedorById(@PathVariable Long id){
+    public VendedorOut vendedorById(@PathVariable Long id){
         return vendedorService.vendedorById(id);
     }
-
 }
