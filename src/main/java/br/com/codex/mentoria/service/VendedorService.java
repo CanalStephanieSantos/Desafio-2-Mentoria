@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -23,20 +22,12 @@ public class VendedorService {
         vendedorRepository.save(vendedor);
     }
 
-    public List<VendedorOut> vendedorById(Long id){
-        List<Vendedor> vendedor = vendedorRepository.findVendedorById(id);
-        List<VendedorOut> list = new ArrayList<>();
-
-            vendedor.forEach(vendedor1 -> {
-                VendedorOut out = new VendedorOut();
-                out.setNome(vendedor1.getNome());
-                out.setDataInclusao(vendedor1.getDataInclusao());
-                out.setEstado(vendedor1.getEstado());
-                list.add(out);
-            });
-
-        return list;
-
+    public List<Vendedor> findAll(){
+        return vendedorRepository.findAll();
     }
 
+    public VendedorOut vendedorById(Long id){
+        Vendedor vendedor = vendedorRepository.findById(id).get();
+        return VendedorOut.convert(vendedor);
+    }
 }

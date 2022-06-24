@@ -31,9 +31,7 @@ public class Atuacao {
     @NotNull
     private Set<String> estados = new HashSet<>();
 
-    /* Descomentar aqui quando houver a classe Vendedor e criar o getter e settes
     @ManyToOne
     @JoinColumn(name = "idVendedor", nullable = false)
     private Vendedor vendedor;
-    */
-}
+    }
