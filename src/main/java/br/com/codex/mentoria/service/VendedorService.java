@@ -39,9 +39,7 @@ public class VendedorService {
 
     }
 
-    Vendedor vendedor;
     public List<Vendedor> findAll(){
         return vendedorRepository.findAll();
     }
-
 }

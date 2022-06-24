@@ -29,8 +29,13 @@ public class VendedorController {
         return ResponseEntity.status(CREATED).build();
     }
 
+    @GetMapping(value = "/vendedor/all")
+    public List<Vendedor> findAll(){
+        return vendedorService.findAll();
+    }
+
     @GetMapping(value = "/vendedor/{id}")
-    public List<VendedorOut> vendedorById(@PathVariable Long id){
+    public VendedorOut vendedorById(@PathVariable Long id){
         return vendedorService.vendedorById(id);
     }
 
